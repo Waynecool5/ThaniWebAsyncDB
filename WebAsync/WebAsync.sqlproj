@@ -14,7 +14,7 @@
     </RootPath>
     <RootNamespace>WebAsync</RootNamespace>
     <AssemblyName>WebAsync</AssemblyName>
-    <ModelCollation>1033, CI</ModelCollation>
+    <ModelCollation>1033,CI</ModelCollation>
     <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
     <DeployToDatabase>True</DeployToDatabase>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
@@ -23,6 +23,8 @@
     <SqlServerVerification>False</SqlServerVerification>
     <IncludeCompositeObjects>True</IncludeCompositeObjects>
     <TargetDatabaseSet>True</TargetDatabaseSet>
+    <DefaultCollation>SQL_Latin1_General_CP1_CI_AS</DefaultCollation>
+    <DefaultFilegroup>PRIMARY</DefaultFilegroup>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <OutputPath>bin\Release\</OutputPath>
@@ -57,5 +59,36 @@
   <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
   <ItemGroup>
     <Folder Include="Properties" />
+    <Folder Include="dbo\" />
+    <Folder Include="dbo\Tables\" />
+    <Folder Include="dbo\Functions\" />
+    <Folder Include="dbo\Stored Procedures\" />
+    <Folder Include="dbo\User Defined Types\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="dbo\Tables\Apps.sql" />
+    <Build Include="dbo\Tables\Company.sql" />
+    <Build Include="dbo\Tables\JSONDocuments.sql" />
+    <Build Include="dbo\Tables\Main.sql" />
+    <Build Include="dbo\Tables\MassyApiCodes.sql" />
+    <Build Include="dbo\Tables\Points.sql" />
+    <Build Include="dbo\Tables\Registration.sql" />
+    <Build Include="dbo\Tables\ThaniStoreCodes.sql" />
+    <Build Include="dbo\Tables\JSONTransactions.sql" />
+    <Build Include="dbo\Tables\Users.sql" />
+    <Build Include="dbo\Tables\WebCompany.sql" />
+    <Build Include="dbo\Functions\UNIX_TIMESTAMP.sql" />
+    <Build Include="dbo\Stored Procedures\GetVoidProfile.sql" />
+    <Build Include="dbo\Stored Procedures\GetCustomerPoints.sql" />
+    <Build Include="dbo\Stored Procedures\GetList.sql" />
+    <Build Include="dbo\Stored Procedures\GetPointsProfile.sql" />
+    <Build Include="dbo\Stored Procedures\InsertDocuments.sql" />
+    <Build Include="dbo\Stored Procedures\InsertPoints.sql" />
+    <Build Include="dbo\Stored Procedures\UpdatePoints.sql" />
+    <Build Include="dbo\Stored Procedures\GetRedeemProfile.sql" />
+    <Build Include="dbo\Stored Procedures\Procedure.sql" />
+    <Build Include="dbo\Stored Procedures\InsertTransaction.sql" />
+    <Build Include="dbo\Stored Procedures\doRegistration.sql" />
+    <Build Include="dbo\User Defined Types\PointsTable.sql" />
   </ItemGroup>
 </Project>

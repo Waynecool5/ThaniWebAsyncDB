@@ -1,0 +1,7 @@
+﻿CREATE TABLE [dbo].[Company] (
+    [Comp_ID] INT           IDENTITY (1, 1) NOT NULL,
+    [Company] NVARCHAR (50) NULL,
+    [VAT]     NVARCHAR (20) NULL,
+    CONSTRAINT [PK__Test2__3214EC07C8719005] PRIMARY KEY CLUSTERED ([Comp_ID] ASC)
+);
+
